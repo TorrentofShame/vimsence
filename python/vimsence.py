@@ -41,7 +41,7 @@ with open(os.path.join(vim.eval('s:plugin_root_dir'), '..', 'vimsence.json'), 'r
     config = json.load(config_file)
 
 # Contains which files has thumbnails.
-has_thumbnail = [item['name'] for item in config['filetypes']]
+has_thumbnail = {item['name'] for item in config['filetypes']}
 
 # Remaps file types to specific icons.
 # The key is the filetype, the value is the image name.
